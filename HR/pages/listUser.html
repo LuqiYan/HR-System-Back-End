@@ -1,0 +1,75 @@
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div>
+            <lable>Search:<input ng-model="search.$"></lable><br>
+        </div>
+    </div>
+    <hr>
+
+    <h3>Employees</h3>
+    <div class="dropdown sort-btn">
+        <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Sort
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="" ng-click="order('fName')">First Name</a></li>
+            <li><a href="" ng-click="order('lName')">Last Name</a></li>
+            <li><a href="" ng-click="order('sex')">Sex</a></li>
+            <li><a href="" ng-click="order('age')">Age</a></li>
+        </ul>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Edit</th>
+            <th>
+                First Name<span ng-show="predicate === 'fName'" ng-class="{reverse:reverse}"></span>
+            </th>
+            <th>
+                Last Name<span ng-show="predicate === 'lName'" ng-class="{reverse:reverse}"></span>
+            </th>
+            <th>
+                Sex<span ng-show="predicate === 'sex'" ng-class="{reverse:reverse}"></span>
+            </th>
+            <th>
+                Age<span ng-show="predicate === 'age'" ng-class="{reverse:reverse}"></span>
+            </th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <tr ng-repeat="user in users | filter: search | orderBy:predicate:reverse | limitTo:pageSize:pageStart" >
+            <td>
+                <a href="#/editUser/{{user.id}}">Edit</a>
+            </td>
+            <td>{{ user.fName }}</td>
+            <td>{{ user.lName }}</td>
+            <td>{{ user.sex }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.id }}</td>
+            <td>
+                <button class="btn" ng-click="deleteUser(user.id)">
+                    <i class="material-icons large">delete</i>
+                </button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-success" ng-click="go('/newUser')">
+        <span class="glyphicon glyphicon-user"></span>  Create New User
+    </button>
+
+    <button ng-click="changePageSize(10)" class="btn btn-link view-page">view 10</button>
+    <button ng-click="changePageSize(5)" class="btn btn-link view-page">view 5</button>
+
+    <hr>
+    <button ng-disabled="currentPage == 0" ng-click="previousPage()">Previous</button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= users.length/pageSize - 1" ng-click="nextPage()">Next</button>
+
+</div>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- CSS Style -->
+<link href="./css/style.css" rel="stylesheet">
+
+<style type="text/css">
+    .sortorder:after {
+        content: '\25b2';
+    }
+    .sortorder.reverse:after {
+        content: '\25bc';
+    }
+</style>
+
+<body ng-app="multiCtrl">
+
+<div>
+    <div class="container centered index-link">
+        <h1>Human Resource Management System</h1>
+        <a href="#/listUser">List All Employees | </a><a href="#/newUser">Create New Employee</a>
+    </div>
+    <div class="container" ng-view></div>
+    <script src="js/main.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+
+</div>
+
+</body>
+</html>
