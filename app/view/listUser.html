@@ -16,6 +16,7 @@
             <li><a href="" ng-click="order('lName')">Last Name</a></li>
             <li><a href="" ng-click="order('sex')">Sex</a></li>
             <li><a href="" ng-click="order('age')">Age</a></li>
+            <li><a href="" ng-click="order('id')">ID</a></li>
         </ul>
     </div>
 
@@ -35,6 +36,10 @@
             <th>
                 Age<span ng-show="predicate === 'age'" ng-class="{reverse:reverse}"></span>
             </th>
+            <th>
+                ID<span ng-show="predicate === 'id'" ng-class="{reverse:reverse}"></span>
+            </th>
+            <th>Delete</th>
         </tr>
         </thead>
 

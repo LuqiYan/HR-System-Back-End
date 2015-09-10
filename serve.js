@@ -22,7 +22,7 @@ var userData = [
     {id:11, fName:'Amanda',lName:"Wills", sex: "Female", age: "34" }
 ];
 
-app.use(express.static('HR'));
+app.use(express.static('app'));
 
 app.get('/getUserList', function(req, res){
     res.json(userData);

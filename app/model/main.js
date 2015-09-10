@@ -4,15 +4,15 @@ multi.config(['$routeProvider',
         function($routeProvider) {
             $routeProvider
                 .when('/listUser', {
-                    templateUrl: 'pages/listUser.html',
+                    templateUrl: 'view/listUser.html',
                     controller: 'listCtrl'
                 })
                 .when('/editUser/:userId', {
-                    templateUrl: 'pages/editUser.html',
+                    templateUrl: 'view/editUser.html',
                     controller: 'editCtrl'
                 })
                 .when('/newUser', {
-                    templateUrl: 'pages/newUser.html',
+                    templateUrl: 'view/newUser.html',
                     controller: 'newCtrl'
                 })
                 .otherwise({
